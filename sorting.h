@@ -3,7 +3,7 @@
 
 //-------------insertion sort-------------------------
 template<typename T>
-void insertion_sort(T a[], int n)
+void insertionSort(T a[], int n)
 {
 	T tm;
 	for (int i=0; i!=n; ++i) {
@@ -21,7 +21,7 @@ void insertion_sort(T a[], int n)
 
 //-----------------shell sort------------------------
 template<typename T>
-void shellsort(T a[], int n)
+void shellSort(T a[], int n)
 {
 	for (int increment=n/2; increment>=1; increment/=2) {
 		if (increment%2 == 0) increment++;
@@ -41,7 +41,7 @@ void shellsort(T a[], int n)
 
 //-----------------heap sort--------------------------
 template<typename T>
-void percolatedown(T a[], int n, int i)
+void percolateDown(T a[], int n, int i)
 {
 	T tm = a[i];
 	int child = i<<1;
@@ -58,7 +58,7 @@ void percolatedown(T a[], int n, int i)
 }
 
 template<typename T>
-void heapsort(T a[], int n)
+void heapSort(T a[], int n)
 {
 	for (int i=n/2; i>=0; --i)
 		percolatedown(a,n,i);
@@ -86,7 +86,7 @@ void reverse(T a[], int n)
 //----------------merge sort------------------------
 
 template<typename T>
-void merge_array(T a[], int beg, int end)
+void mergeArray(T a[], int beg, int end)
 {
 	int center = (beg + end) / 2;
 	for (int i=beg, j=center+1; i<=end && j<=end;) {
@@ -104,7 +104,7 @@ void merge_array(T a[], int beg, int end)
 }
 
 template<typename T>
-void m_sort(T a[], int left, int right)
+void mSort(T a[], int left, int right)
 {
 	if (left < right) {
 		int center = (left + right) / 2;
@@ -115,7 +115,7 @@ void m_sort(T a[], int left, int right)
 }
 
 template<typename T>
-void mergesort(T a[], int n)
+void mergeSort(T a[], int n)
 {
 	m_sort(a,0,n-1);
 }
@@ -151,7 +151,7 @@ T median(T a[], int left, int right)
 }
 
 template<typename T>
-void q_sort(T a[], int left, int right)
+void qSort(T a[], int left, int right)
 {
 	//if the array size is little than 5, use insertion sort
 	if (left+4 <= right) {
@@ -181,7 +181,7 @@ void q_sort(T a[], int left, int right)
 }
 
 template<typename T>
-void quicksort(T a[], int n)
+void quickSort(T a[], int n)
 {
 	q_sort(a,0,n-1);
 }
